@@ -1,0 +1,68 @@
+
+<script>
+  function save() {
+    //learn: JSON Object to String: JSON.parse(obj);
+    //       String to JSON Object: JSON.stringify(str);
+    var jsonDataStr = myDiagram.model.toJson();
+    var jsonDataObj = JSON.parse(jsonDataStr);
+    var jsonDataNodeArr = jsonDataObj.nodeDataArray;
+
+    
+    //Constuct our final "answer" JSON Objects by selecting necessary attributes: every node's key -> text(user inputs)
+    var answer = [];
+    for(var i = 0; i < jsonDataNodeArr.length; i++){
+      var obj = {"key":jsonDataNodeArr[i]["key"], "text": jsonDataNodeArr[i]["text"]};
+      answer.push(obj);
+    }
+
+    //print the final answer on the screen by converting it to string
+    //Learn: JSON string line breaking, replace "}," by "},\n", lose no chars and achieve line breaking
+    console.log(answer);
+    document.getElementById("mySavedModel").value = JSON.stringify(answer).replace(/},/g, '},\n');
+    myDiagram.isModified = false;
+  }
+</script>
+
+<div id="sample">
+  <div id="myDiagramDiv" style="background-color: white; border: solid 1px black; width: 100%; height: 500px"></div>
+
+
+  <button id="SaveButton" onclick="save()">Save</button> <!--  button to trigger the data saving function -->
+  Diagram Model saved in JSON format:
+  <br />
+  <textarea id="mySavedModel" style="width:100%;height:400px">
+    [{ key: "Problem" , text: "<x + y + z> || {x:= 1, y:=2, z:=3}"},
+    { key: "0" , text: "<>||{}"},
+    { key: "1" , text: "<>||{}"},
+    { key: "00", text: "<>||{}"},
+    { key: "01", text: "<>||{}" },
+    { key: "10", text: "<>||{}" },
+    { key: "11", text: "<>||{}" },
+    { key: "000", text: "<>||{}" },
+    { key: "001", text: "<>||{}" },
+    { key: "010", text: "<>||{}" },
+    { key: "011", text: "<>||{}" },
+    { key: "100", text: "<>||{}" },
+    { key: "101", text: "<>||{}" },
+    { key: "110", text: "<>||{}" },
+    { key: "111", text: "<>||{}" },
+    { key: "0000", text: "<>||{}" },
+    { key: "0001", text: "<>||{}" },
+    { key: "0010", text: "<>||{}" },
+    { key: "0011", text: "<>||{}" },
+    { key: "0100", text: "<>||{}" },
+    { key: "0101", text: "<>||{}" },
+    { key: "0110", text: "<>||{}" },
+    { key: "0111", text: "<>||{}" },
+    { key: "1000", text: "<>||{}" },
+    { key: "1001", text: "<>||{}" },
+    { key: "1010", text: "<>||{}" },
+    { key: "1011", text: "<>||{}" },
+    { key: "1100", text: "<>||{}" },
+    { key: "1101", text: "<>||{}" },
+    { key: "1110", text: "<>||{}" },
+    { key: "1111", text: "<>||{}" }]
+  </textarea>
+
+</div>
+

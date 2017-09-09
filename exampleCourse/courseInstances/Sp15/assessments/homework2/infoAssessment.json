@@ -1,0 +1,46 @@
+{
+    "uuid": "00a638ad-7510-4890-851f-a46f25c5a382",
+    "type": "Homework",
+    "title": "Demo for Big Step Semantics prove tree",
+    "set": "Homework",
+    "number": "2",
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 120,
+            "startDate": "2014-04-07T00:00:01",
+            "endDate": "2014-07-10T23:59:59"
+        },
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2014-07-07T00:00:01",
+            "endDate": "2024-07-10T23:59:59"
+        },
+        {
+            "mode": "Public",
+            "credit": 80,
+            "startDate": "2014-07-07T00:00:01",
+            "endDate": "2024-08-10T23:59:59"
+        },
+        {
+            "mode": "Public",
+            "credit": 50,
+            "startDate": "2014-07-07T00:00:01",
+            "endDate": "2024-09-10T23:59:59"
+        }
+    ],
+    "zones": [
+        {
+            "questions": [
+                {"id": "addVectors",                 "points": 1, "maxPoints": 5},
+                {"id": "fibonacciEditor",            "points": 1, "maxPoints": 5},
+                {"id": "fibonacciUpload",            "points": 1, "maxPoints": 5},
+                {"id": "fossilFuelsRadio",           "points": 2, "maxPoints": 10},
+                {"id": "ballToss2",                  "points": 2, "maxPoints": 10},
+                {"id": "positionTimeGraph",          "points": 2, "maxPoints": 10},
+                {"id": "big_step",          "points": 2, "maxPoints": 10}
+            ]
+        }
+    ]
+}

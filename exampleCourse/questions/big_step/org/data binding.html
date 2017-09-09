@@ -1,0 +1,782 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>GoJS Data Binding -- Northwoods Software</title>
+            <!-- Copyright 1998-2017 by Northwoods Software Corporation. -->
+            <script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="../release/go.js"></script>
+            <script src="goIntro.js"></script><script src="../assets/js/highlight.js"></script><script src="../assets/js/jquery.min.js"></script><script src="../assets/js/bootstrap.min.js"></script><link type="text/css" rel="stylesheet" href="../assets/css/bootstrap.min.css"><link type="text/css" rel="stylesheet" href="../assets/css/highlight.css"><link type="text/css" rel="stylesheet" href="../assets/css/main.css">
+            <style></style></head>
+<body onload="goIntro()">
+    <div>  <!-- non-fixed navbar -->  <nav id="non-fixed-nav" class="navbar navbar-inverse navbar-top">    <div class="container-fluid">      <div class="navbar-header">        <div class="navheader-container">          <div class="navheader-collapse" data-toggle="collapse" data-target="#navbar">            <a id="toplogo" class="navbar-brand" href="../index.html">GoJS</a>            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">              <span class="sr-only">Toggle navigation</span>              <span class="icon-bar"></span>              <span class="icon-bar"></span>              <span class="icon-bar"></span>            </button>          </div>        </div>      </div>      <div id="navbar" class="navbar-collapse collapse">        <ul class="nav navbar-nav navbar-right">          <li><a href="../index.html">Home</a></li>          <li><a href="../learn/index.html">Learn</a></li>          <li><a href="../samples/index.html">Samples</a></li>          <li><a href="../intro/index.html">Intro</a></li>          <li><a href="../api/index.html" target="api">API</a></li>          <li><a href="https://www.nwoods.com/components/evalform.htm">Register</a></li>          <li><a href="../doc/download.html">Download</a></li>          <li><a href="https://forum.nwoods.com/c/gojs">Forum</a></li>          <li><a href="https://www.nwoods.com/contact.html" onclick="ga('send','event','Outbound Link','click','contact');">Contact</a></li>          <li class="buy"><a href="https://www.nwoods.com/sales/index.html" onclick="ga('send','event','Outbound Link','click','buy');">Buy</a></li>          <li class="activate"><a href="https://www.nwoods.com/app/activate.aspx?sku=gojs">Activate</a></li>        </ul>      </div><!--/.nav-collapse -->    </div>  </nav></div><div id="container" class="container-fluid">
+        <div id="navindex" class="col-md-2">  <div class="sidebar-nav">  <div class="navbar navbar-default" role="navigation">    <div class="navbar-header">      <div class="navheader-container">        <div class="navheader-collapse" data-toggle="collapse" data-target="#DiagramNavbar">          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#DiagramNavbar">            <span class="sr-only">Toggle navigation</span>            <span class="icon-bar"></span>            <span class="icon-bar"></span>            <span class="icon-bar"></span>          </button>        </div>        <span class="navbar-brand">Introduction</span>      </div>    </div>    <div id="DiagramNavbar" class="navbar-collapse collapse sidebar-navbar-collapse">    <ul id="sections" class="classList nav navbar-nav">      <li><a href="index.html">Basics</a></li>      <li><a href="buildingObjects.html">Building Parts</a></li>      <li><a href="textBlocks.html">TextBlocks</a></li>      <li><a href="shapes.html">Shapes</a></li>      <li><a href="pictures.html">Pictures</a></li>      <li><a href="panels.html">Panels</a></li>      <li><a href="tablePanels.html">Table Panels</a></li>      <li><a href="brush.html">Brushes</a></li>      <li><a href="sizing.html">Sizing Objects</a></li>      <li><a href="usingModels.html">Using Models</a></li>      <li><a href="dataBinding.html" class="selected">Data Binding</a></li>      <li><a href="itemArrays.html">Item Arrays</a></li>      <li><a href="changedEvents.html">Changed Events</a></li>      <li><a href="transactions.html">Transactions</a></li>      <li><a href="viewport.html">Coordinates</a></li>      <li><a href="initialView.html">Initial View</a></li>      <li><a href="collections.html">Collections</a></li>      <li><a href="links.html">Links</a></li>      <li><a href="linkLabels.html">Link Labels</a></li>      <li><a href="connectionPoints.html">Link Points</a></li>      <li><a href="ports.html">Ports</a></li>      <li><a href="nodes.html">Nodes</a></li>      <li><a href="layouts.html">Layouts</a></li>      <li><a href="trees.html">Trees</a></li>      <li><a href="subtrees.html">SubTrees</a></li>      <li><a href="groups.html">Groups</a></li>      <li><a href="subgraphs.html">SubGraphs</a></li>      <li><a href="sizedGroups.html">Sized Groups</a></li>      <li><a href="selection.html">Selection</a></li>      <li><a href="highlighting.html">Highlighting</a></li>      <li><a href="toolTips.html">ToolTips</a></li>      <li><a href="contextmenus.html">Context Menus</a></li>      <li><a href="events.html">Diagram Events</a></li>      <li><a href="tools.html">Tools</a></li>      <li><a href="commands.html">Commands</a></li>      <li><a href="permissions.html">Permissions</a></li>      <li><a href="validation.html">Validation</a></li>      <li><a href="HTMLInteraction.html">HTML Interaction</a></li>      <li><a href="layers.html">Layers &amp; Z-ordering</a></li>      <li><a href="palette.html">Palette</a></li>      <li><a href="overview.html">Overview</a></li>      <li><a href="resizing.html">Resizing Diagrams</a></li>      <li><a href="buttons.html">Buttons</a></li>      <li><a href="templateMaps.html">Template Maps</a></li>      <li><a href="legends.html">Legends and Titles</a></li>      <li><a href="extensions.html">Extensions</a></li>      <li><a href="geometry.html">Geometry Strings</a></li>      <li><a href="grids.html">Grid Patterns</a></li>      <li><a href="graduatedPanels.html">Graduated Panels</a></li>      <li><a href="makingImages.html">Diagram Images</a></li>      <li><a href="makingSVG.html">Diagram SVG</a></li>      <li><a href="printing.html">Printing</a></li>      <li><a href="serverSideImages.html">Server-side Images</a></li>      <li><a href="performance.html">Performance</a></li>      <li><a href="deployment.html">Deployment</a></li>    </ul>    </div>  </div>  </div></div><div id="content" class="col-md-10">
+            
+            <h1>Data Binding</h1>
+            <p>
+            Data binding is a way to extract a value from a source object and set a property on a target object.
+            The target objects are normally <a href="../api/symbols/GraphObject.html" target="api">GraphObject</a>s;
+            the source objects are usually JavaScript data objects held in a model.
+            </p>
+            <p>
+            You could write code that gets a desired value from the model data,
+            searches the <a href="../api/symbols/Diagram.html" target="api">Diagram</a> for the appropriate <a href="../api/symbols/Part.html" target="api">Part</a>, searches for the target <a href="../api/symbols/GraphObject.html" target="api">GraphObject</a>
+            within the visual tree of that Part, and then sets one or more properties on that GraphObject with that value,
+            perhaps after modifying or converting the original value in a way appropriate for the individual properties.
+            However data binding offers a declarative way to specify such behavior just by supplying a
+            <a href="../api/symbols/Binding.html" target="api">Binding</a> that names the properties on the source object and on the target object.
+            </p>
+            <p>
+            Trying to bind a non-existent property of a <a href="../api/symbols/GraphObject.html" target="api">GraphObject</a> will probably result in a warning or error
+            that you can see in the console log.  Always check the console log for any kinds of potential exceptions that
+            are normally suppressed by the binding system.
+            </p>
+            
+            <h2 id="RelationshipsOfPartsAndDataAndBinding">The Relationships of Parts and Data and Binding</h2>
+            <p>
+            First, look at a diagram that includes comments about the GraphObjects used to build some example nodes and links:
+            </p>
+            <pre data-language="javascript" id="commented" style="display:none" class=" hljs javascript">  diagram.nodeTemplate =
+                $(go.Node, <span class="hljs-string">"Auto"</span>,
+                { scale : <span class="hljs-number">1.6</span>, isShadowed: <span class="hljs-literal">true</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"location"</span>, <span class="hljs-string">"pos"</span>, go.Point.parse),
+                { locationSpot: go.Spot.Center, portId: <span class="hljs-string">"NODE"</span> },
+                $(go.Shape, <span class="hljs-string">"RoundedRectangle"</span>,
+                { fill: <span class="hljs-string">"white"</span>, portId: <span class="hljs-string">"SHAPE"</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"fill"</span>, <span class="hljs-string">"color"</span>)),
+                $(go.TextBlock,
+                { margin: <span class="hljs-number">4</span>, portId: <span class="hljs-string">"TEXTBLOCK"</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"text"</span>, <span class="hljs-string">"txt"</span>))
+                );
+                
+                diagram.linkTemplate =
+                $(go.Link,
+                { isShadowed: <span class="hljs-literal">true</span> },
+                $(go.Shape,
+                { strokeWidth: <span class="hljs-number">5</span>, stroke: <span class="hljs-string">"orange"</span> })
+                );
+                
+                <span class="hljs-comment">// Represents the nodeDataArray for the two nodes</span>
+                diagram.nodeTemplateMap.add(<span class="hljs-string">"dataNode"</span>,
+                $(go.Node, <span class="hljs-string">"Auto"</span>,
+                {
+                locationSpot: go.Spot.Center,
+                scale: <span class="hljs-number">1.2</span>,
+                selectionAdorned: <span class="hljs-literal">true</span>,
+                fromSpot: go.Spot.AllSides,
+                toSpot: go.Spot.AllSides,
+                shadowColor: <span class="hljs-string">"#C5C1AA"</span>
+                },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"location"</span>, <span class="hljs-string">"pos"</span>, go.Point.parse),
+                $(go.Shape, <span class="hljs-string">"Rectangle"</span>,
+                { fill: <span class="hljs-string">"lightgray"</span> }),
+                $(go.Panel, <span class="hljs-string">"Vertical"</span>,
+                { defaultStretch: go.GraphObject.Horizontal },
+                $(go.TextBlock, headerStyle(), <span class="hljs-comment">// Header:</span>
+                { portId: <span class="hljs-string">"HEADER"</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"text"</span>, <span class="hljs-string">"head"</span>)),
+                $(go.Shape, <span class="hljs-string">"LineH"</span>, { height: <span class="hljs-number">1</span>, stretch: go.GraphObject.Fill }),
+                $(go.TextBlock, textStyle(), <span class="hljs-comment">// Location:</span>
+                { portId: <span class="hljs-string">"LOCATION"</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"text"</span>, <span class="hljs-string">"loc"</span>)),
+                $(go.Shape, <span class="hljs-string">"LineH"</span>, { height: <span class="hljs-number">1</span>, stretch: go.GraphObject.Fill }),
+                $(go.TextBlock, textStyle(), <span class="hljs-comment">// Fill:</span>
+                { portId: <span class="hljs-string">"FILL"</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"text"</span>, <span class="hljs-string">"color"</span>)),
+                $(go.Shape, <span class="hljs-string">"LineH"</span>, { height: <span class="hljs-number">1</span>, stretch: go.GraphObject.Fill }),
+                $(go.TextBlock, textStyle(), <span class="hljs-comment">// Text:</span>
+                { portId: <span class="hljs-string">"TEXT"</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"text"</span>, <span class="hljs-string">"txt"</span>)),
+                $(go.Shape, <span class="hljs-string">"LineH"</span>, { height: <span class="hljs-number">1</span>, stretch: go.GraphObject.Fill }),
+                $(go.TextBlock, textStyle(), <span class="hljs-comment">// Text:</span>
+                { portId: <span class="hljs-string">"PARENT"</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"text"</span>, <span class="hljs-string">"parent"</span>))
+                )
+                )
+                );
+                
+                diagram.linkTemplateMap.add(<span class="hljs-string">"dataNode"</span>, <span class="hljs-comment">// Links from dataNode to Nodes</span>
+                $(go.Link,
+                { routing: go.Link.Orthogonal, corner: <span class="hljs-number">5</span> },
+                $(go.Shape, { stroke: <span class="hljs-string">"gray"</span>, strokeWidth: <span class="hljs-number">2</span> }),
+                $(go.Shape, { toArrow: <span class="hljs-string">"Standard"</span>, stroke: <span class="hljs-string">"gray"</span>, fill: <span class="hljs-string">"gray"</span> })
+                ));
+                
+                diagram.nodeTemplateMap.add(<span class="hljs-string">"title"</span>,
+                $(go.Node, <span class="hljs-string">"Auto"</span>,
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"location"</span>, <span class="hljs-string">"pos"</span>, go.Point.parse),
+                $(go.TextBlock,
+                { font: <span class="hljs-string">"bold 25pt sans-serif"</span>, textAlign: <span class="hljs-string">"center"</span>},
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"text"</span>, <span class="hljs-string">"txt"</span>))
+                ));
+                
+                diagram.nodeTemplateMap.add(<span class="hljs-string">"nodeDataArray"</span>,
+                $(go.Node, <span class="hljs-string">"Auto"</span>,
+                {
+                locationSpot: go.Spot.Center,
+                scale: <span class="hljs-number">1.2</span>,
+                selectionAdorned: <span class="hljs-literal">true</span>,
+                fromSpot: go.Spot.AllSides,
+                toSpot: go.Spot.AllSides,
+                shadowColor: <span class="hljs-string">"#C5C1AA"</span>
+                },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"location"</span>, <span class="hljs-string">"pos"</span>, go.Point.parse),
+                $(go.Shape, <span class="hljs-string">"Rectangle"</span>, { fill: <span class="hljs-string">"lightgray"</span> }),
+                $(go.Panel, <span class="hljs-string">"Vertical"</span>,
+                { defaultStretch: go.GraphObject.Horizontal },
+                $(go.TextBlock, headerStyle(),
+                { portId: <span class="hljs-string">"HEADER"</span>, text: <span class="hljs-string">"nodeDataArray"</span> }),
+                $(go.Shape, <span class="hljs-string">"LineH"</span>, { height: <span class="hljs-number">1</span>, stretch: go.GraphObject.Fill }),
+                $(go.TextBlock, textStyle(),
+                { portId: <span class="hljs-string">"dataNode1"</span>, desiredSize: <span class="hljs-keyword">new</span> go.Size(<span class="hljs-literal">NaN</span>,<span class="hljs-number">16</span>) }),
+                $(go.Shape, <span class="hljs-string">"LineH"</span>, { height: <span class="hljs-number">1</span>, stretch: go.GraphObject.Fill }),
+                $(go.TextBlock, textStyle(),
+                { portId: <span class="hljs-string">"dataNode2"</span>, desiredSize: <span class="hljs-keyword">new</span> go.Size(<span class="hljs-literal">NaN</span>,<span class="hljs-number">16</span>) })
+                )
+                ));
+                
+                <span class="hljs-comment">// Comments</span>
+                diagram.nodeTemplateMap.add(<span class="hljs-string">"Comment"</span>, <span class="hljs-comment">// Template for comment node</span>
+                $(go.Node,
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"location"</span>, <span class="hljs-string">"pos"</span>, go.Point.parse),
+                { locationSpot: go.Spot.Center},
+                $(go.TextBlock,
+                { stroke: <span class="hljs-string">"brown"</span>, textAlign: <span class="hljs-string">"center"</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"text"</span>, <span class="hljs-string">"txt"</span>),
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"font"</span>, <span class="hljs-string">"bold"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(b)</span> {</span> <span class="hljs-keyword">return</span> b ? <span class="hljs-string">"bold 10pt sans-serif"</span> : <span class="hljs-string">"10pt sans-serif"</span>; }))
+                ));
+                
+                diagram.nodeTemplateMap.add(<span class="hljs-string">"LinkLabel"</span>, <span class="hljs-comment">// Template for comments on links</span>
+                $(go.Node,
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"segmentIndex"</span>),
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"segmentOffset"</span>)
+                ));
+                
+                diagram.linkTemplateMap.add(<span class="hljs-string">"Comment"</span>, <span class="hljs-comment">// Template for links from comments</span>
+                $(go.Link,
+                { curve: go.Link.Bezier },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"curviness"</span>),
+                $(go.Shape, { stroke: <span class="hljs-string">"brown"</span> }),
+                $(go.Shape, { toArrow: <span class="hljs-string">"OpenTriangle"</span>, stroke: <span class="hljs-string">"brown"</span> })
+                ));
+                
+                diagram.linkTemplateMap.add(<span class="hljs-string">"Binding"</span>,
+                $(go.Link,
+                { curve: go.Link.Bezier },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"curviness"</span>),
+                $(go.Shape, { stroke: <span class="hljs-string">"green"</span> , strokeWidth: <span class="hljs-number">2</span>, strokeDashArray: [<span class="hljs-number">10</span>, <span class="hljs-number">10</span>] }),
+                $(go.Shape, { toArrow: <span class="hljs-string">"OpenTriangle"</span>, stroke: <span class="hljs-string">"green"</span>, strokeWidth: <span class="hljs-number">2</span> })
+                ));
+                
+                diagram.linkTemplateMap.add(<span class="hljs-string">"Data"</span>,
+                $(go.Link,
+                { curve: go.Link.Bezier },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"curviness"</span>),
+                $(go.Shape, { stroke: <span class="hljs-string">"gray"</span> , strokeWidth: <span class="hljs-number">2</span> }),
+                $(go.Shape, { toArrow: <span class="hljs-string">"Standard"</span>, fill: <span class="hljs-string">"gray"</span>, stroke: <span class="hljs-string">"gray"</span>, strokeWidth: <span class="hljs-number">2</span> }),
+                $(go.TextBlock, <span class="hljs-string">".data"</span>, { font: <span class="hljs-string">"bold 12pt Courier"</span>, segmentOffset: <span class="hljs-keyword">new</span> go.Point(<span class="hljs-number">0</span>, -<span class="hljs-number">10</span>) })
+                ));
+                
+                diagram.initialContentAlignment = go.Spot.Center;
+                
+                <span class="hljs-keyword">var</span> model = <span class="hljs-keyword">new</span> go.GraphLinksModel();
+                model.linkFromPortIdProperty = <span class="hljs-string">"fPID"</span>;
+                model.linkToPortIdProperty = <span class="hljs-string">"tPID"</span>
+                model.linkLabelKeysProperty = <span class="hljs-string">"labels"</span>;
+                
+                model.nodeDataArray = [
+                { key: <span class="hljs-number">1</span>, txt: <span class="hljs-string">"Alpha"</span>, color: <span class="hljs-string">"lightblue"</span>,  pos: <span class="hljs-string">"50 20"</span>},
+                { key: <span class="hljs-number">2</span>, txt: <span class="hljs-string">"Beta"</span>,  color: <span class="hljs-string">"lightgreen"</span>, pos: <span class="hljs-string">"50 270"</span>},
+                { key: <span class="hljs-number">3</span>, category: <span class="hljs-string">"dataNode"</span>, pos: <span class="hljs-string">"300 66"</span>,  head: <span class="hljs-string">"key: 1"</span>, txt: <span class="hljs-string">"text: Alpha"</span>, color: <span class="hljs-string">"color: lightblue"</span>,  loc: <span class="hljs-string">"location: 50 0"</span>,   parent: <span class="hljs-string">"parent: null"</span>},
+                { key: <span class="hljs-number">4</span>, category: <span class="hljs-string">"dataNode"</span>, pos: <span class="hljs-string">"300 316"</span>, head: <span class="hljs-string">"key: 2"</span>, txt: <span class="hljs-string">"text: Beta"</span>,  color: <span class="hljs-string">"color: lightgreen"</span>, loc: <span class="hljs-string">"location: 50 250"</span>, parent: <span class="hljs-string">"parent: 1"</span>},
+                { key: <span class="hljs-number">5</span>, category: <span class="hljs-string">"nodeDataArray"</span>, pos: <span class="hljs-string">"500 125"</span>},
+                { key: <span class="hljs-number">6</span>, category: <span class="hljs-string">"title"</span>, pos: <span class="hljs-string">"320 -100"</span>, txt: <span class="hljs-string">"TreeModel,\n data"</span>},
+                { key: <span class="hljs-number">7</span>, category: <span class="hljs-string">"title"</span>, pos: <span class="hljs-string">"-50 -100"</span>, txt: <span class="hljs-string">"Diagram,\nNodes, Links"</span>},
+                { key: -<span class="hljs-number">1</span>, category: <span class="hljs-string">"Comment"</span>, pos: <span class="hljs-string">"310 190"</span>, txt: <span class="hljs-string">"These two\ndata Objects are\nare held in the\nnodeDataArray."</span>},
+                { key: -<span class="hljs-number">2</span>, category: <span class="hljs-string">"Comment"</span>, pos: <span class="hljs-string">"100 100"</span>, txt: <span class="hljs-string">"a Link"</span>, bold: <span class="hljs-literal">true</span>},
+                { key: -<span class="hljs-number">21</span>, category: <span class="hljs-string">"LinkLabel"</span>},
+                { key: -<span class="hljs-number">3</span>, category: <span class="hljs-string">"Comment"</span>, pos: <span class="hljs-string">"0 130"</span>,  txt: <span class="hljs-string">"two Nodes"</span>, bold: <span class="hljs-literal">true</span>},
+                { key: -<span class="hljs-number">4</span>, category: <span class="hljs-string">"Comment"</span>, pos: <span class="hljs-string">"190 180"</span>,  txt: <span class="hljs-string">"data binding"</span>, bold: <span class="hljs-literal">true</span>},
+                { key: -<span class="hljs-number">41</span>, category: <span class="hljs-string">"LinkLabel"</span>, segmentOffset: <span class="hljs-keyword">new</span> go.Point(<span class="hljs-number">45</span>, <span class="hljs-number">0</span>)},
+                { key: -<span class="hljs-number">42</span>, category: <span class="hljs-string">"LinkLabel"</span>, segmentOffset: <span class="hljs-keyword">new</span> go.Point(<span class="hljs-number">20</span>, <span class="hljs-number">0</span>)},
+                { key: -<span class="hljs-number">43</span>, category: <span class="hljs-string">"LinkLabel"</span>, segmentOffset: <span class="hljs-keyword">new</span> go.Point(-<span class="hljs-number">10</span>, <span class="hljs-number">0</span>)},
+                { key: -<span class="hljs-number">44</span>, category: <span class="hljs-string">"LinkLabel"</span>, segmentOffset: <span class="hljs-keyword">new</span> go.Point(<span class="hljs-number">25</span>, <span class="hljs-number">0</span>)},
+                { key: -<span class="hljs-number">45</span>, category: <span class="hljs-string">"LinkLabel"</span>, segmentOffset: <span class="hljs-keyword">new</span> go.Point(<span class="hljs-number">20</span>, <span class="hljs-number">0</span>)},
+                { key: -<span class="hljs-number">46</span>, category: <span class="hljs-string">"LinkLabel"</span>, segmentOffset: <span class="hljs-keyword">new</span> go.Point(-<span class="hljs-number">10</span>, <span class="hljs-number">0</span>)}
+                ];
+                model.linkDataArray = [
+                { from: <span class="hljs-number">1</span>, to: <span class="hljs-number">2</span>, labels: [-<span class="hljs-number">21</span>] },
+                { from: <span class="hljs-number">1</span>, tPID: <span class="hljs-string">"HEADER"</span>, to: <span class="hljs-number">3</span>, category: <span class="hljs-string">"Data"</span>, curviness: <span class="hljs-number">0</span>},
+                { from: <span class="hljs-number">2</span>, tPID: <span class="hljs-string">"HEADER"</span>, to: <span class="hljs-number">4</span>, category: <span class="hljs-string">"Data"</span>, curviness: <span class="hljs-number">0</span>},
+                { from: -<span class="hljs-number">21</span>, tPID: <span class="hljs-string">"HEADER"</span>, to: <span class="hljs-number">4</span>, category: <span class="hljs-string">"Data"</span>, curviness: -<span class="hljs-number">50</span>},
+                { from: <span class="hljs-number">5</span>, fPID: <span class="hljs-string">"dataNode1"</span>, to: <span class="hljs-number">3</span>, tPID: <span class="hljs-string">"HEADER"</span>, category: <span class="hljs-string">"dataNode"</span>},
+                { from: <span class="hljs-number">5</span>, fPID: <span class="hljs-string">"dataNode2"</span>, to: <span class="hljs-number">4</span>, tPID: <span class="hljs-string">"HEADER"</span>, category: <span class="hljs-string">"dataNode"</span>},
+                
+                { from: -<span class="hljs-number">1</span>, to: <span class="hljs-number">3</span>, category: <span class="hljs-string">"Comment"</span>},
+                { from: -<span class="hljs-number">1</span>, to: <span class="hljs-number">4</span>, category: <span class="hljs-string">"Comment"</span>},
+                { from: -<span class="hljs-number">2</span>, to: -<span class="hljs-number">21</span>, category: <span class="hljs-string">"Comment"</span>, curviness: <span class="hljs-number">10</span>},
+                { from: -<span class="hljs-number">3</span>, to: <span class="hljs-number">1</span>, category: <span class="hljs-string">"Comment"</span>, curviness: <span class="hljs-number">10</span>},
+                { from: -<span class="hljs-number">3</span>, to: <span class="hljs-number">2</span>, category: <span class="hljs-string">"Comment"</span>, curviness: -<span class="hljs-number">10</span>},
+                { from: -<span class="hljs-number">4</span>, to: -<span class="hljs-number">41</span>, category: <span class="hljs-string">"Comment"</span>, curviness: <span class="hljs-number">5</span>},
+                { from: -<span class="hljs-number">4</span>, to: -<span class="hljs-number">42</span>, category: <span class="hljs-string">"Comment"</span>, curviness: <span class="hljs-number">5</span>},
+                { from: -<span class="hljs-number">4</span>, to: -<span class="hljs-number">43</span>, category: <span class="hljs-string">"Comment"</span>, curviness: <span class="hljs-number">5</span>},
+                { from: -<span class="hljs-number">4</span>, to: -<span class="hljs-number">44</span>, category: <span class="hljs-string">"Comment"</span>, curviness: <span class="hljs-number">5</span>},
+                { from: -<span class="hljs-number">4</span>, to: -<span class="hljs-number">45</span>, category: <span class="hljs-string">"Comment"</span>, curviness: <span class="hljs-number">5</span>},
+                { from: -<span class="hljs-number">4</span>, to: -<span class="hljs-number">46</span>, category: <span class="hljs-string">"Comment"</span>, curviness: <span class="hljs-number">5</span>},
+                { from: -<span class="hljs-number">4</span>, to: -<span class="hljs-number">47</span>, category: <span class="hljs-string">"Comment"</span>, curviness: <span class="hljs-number">5</span>},
+                
+                { from: <span class="hljs-number">3</span>, fPID: <span class="hljs-string">"LOCATION"</span>, to: <span class="hljs-number">1</span>, tPID: <span class="hljs-string">"NODE"</span>, category: <span class="hljs-string">"Binding"</span>, curviness: <span class="hljs-number">10</span>, labels: [-<span class="hljs-number">41</span>]},
+                { from: <span class="hljs-number">3</span>, fPID: <span class="hljs-string">"FILL"</span>, to: <span class="hljs-number">1</span>, tPID: <span class="hljs-string">"SHAPE"</span> , category: <span class="hljs-string">"Binding"</span>, curviness: <span class="hljs-number">30</span>, labels: [-<span class="hljs-number">42</span>]},
+                { from: <span class="hljs-number">3</span>, fPID: <span class="hljs-string">"TEXT"</span>, to: <span class="hljs-number">1</span>, tPID: <span class="hljs-string">"TEXTBLOCK"</span>, category: <span class="hljs-string">"Binding"</span>, curviness: <span class="hljs-number">50</span>, labels: [-<span class="hljs-number">43</span>]},
+                { from: <span class="hljs-number">4</span>, fPID: <span class="hljs-string">"LOCATION"</span>, to: <span class="hljs-number">2</span>, tPID: <span class="hljs-string">"NODE"</span>, category: <span class="hljs-string">"Binding"</span>, curviness: <span class="hljs-number">10</span>, labels: [-<span class="hljs-number">44</span>]},
+                { from: <span class="hljs-number">4</span>, fPID: <span class="hljs-string">"FILL"</span>, to: <span class="hljs-number">2</span>, tPID: <span class="hljs-string">"SHAPE"</span> , category: <span class="hljs-string">"Binding"</span>, curviness: <span class="hljs-number">30</span>, labels: [-<span class="hljs-number">45</span>]},
+                { from: <span class="hljs-number">4</span>, fPID: <span class="hljs-string">"TEXT"</span>, to: <span class="hljs-number">2</span>, tPID: <span class="hljs-string">"TEXTBLOCK"</span>, category: <span class="hljs-string">"Binding"</span>, curviness: <span class="hljs-number">50</span>, labels: [-<span class="hljs-number">46</span>]}
+                ];
+                
+                diagram.model = model;
+                
+                <span class="hljs-comment">// Formatting</span>
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">headerStyle</span><span class="hljs-params">()</span> {</span>
+                <span class="hljs-keyword">return</span> {
+                margin: <span class="hljs-number">3</span>,
+                font: <span class="hljs-string">"bold 12pt sans-serif"</span>,
+                minSize: <span class="hljs-keyword">new</span> go.Size(<span class="hljs-number">16</span>, <span class="hljs-number">16</span>),
+                maxSize: <span class="hljs-keyword">new</span> go.Size(<span class="hljs-number">120</span>, <span class="hljs-literal">NaN</span>),
+                textAlign: <span class="hljs-string">"center"</span>
+                };
+                }
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">textStyle</span><span class="hljs-params">()</span> {</span>
+                <span class="hljs-keyword">return</span> {
+                margin: <span class="hljs-number">2</span>,
+                font: <span class="hljs-string">"10pt sans-serif"</span>,
+                minSize: <span class="hljs-keyword">new</span> go.Size(<span class="hljs-number">16</span>, <span class="hljs-number">16</span>),
+                maxSize: <span class="hljs-keyword">new</span> go.Size(<span class="hljs-number">120</span>, <span class="hljs-literal">NaN</span>),
+                textAlign: <span class="hljs-string">"center"</span>
+                };
+                }
+            </pre>
+            <script>goCode("commented", 650, 550)</script><div class="diagramStyling" style="width: 650px; height: 550px; position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); cursor: auto;"><canvas tabindex="0" width="1300" height="1100" style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; width: 650px; height: 550px; cursor: auto;">This text is displayed if your browser does not support the Canvas HTML element.</canvas><div style="position: absolute; overflow: auto; width: 650px; height: 550px; z-index: 1;"><div style="position: absolute; width: 1px; height: 1px;"></div></div></div>
+            <p>
+            The two <a href="../api/symbols/Node.html" target="api">Node</a>s and one <a href="../api/symbols/Link.html" target="api">Link</a> belong to the <a href="../api/symbols/Diagram.html" target="api">Diagram</a> and are on the left side, with shadows.
+            The <a href="../api/symbols/TreeModel.html" target="api">TreeModel</a> and the two data objects in its <a href="../api/symbols/Model.html#nodeDataArray" target="api">Model.nodeDataArray</a> are on the right side, in gray.
+            </p>
+            <p>
+            Each <a href="../api/symbols/Node.html" target="api">Node</a> and <a href="../api/symbols/Link.html" target="api">Link</a> has a <a href="../api/symbols/Panel.html#data" target="api">Panel.data</a> property that references the data object in the model.
+            Thus it is easy, given a Node, to refer to all of the data properties that you have put on the data in the model.
+            These references are drawn as gray links.
+            </p>
+            <p>
+            Each <a href="../api/symbols/Node.html" target="api">Node</a> also has three <a href="../api/symbols/Binding.html" target="api">Binding</a>s, drawn with dashed green lines:
+            </p>
+            <ul>
+                <li>to the <a href="../api/symbols/Part.html#location" target="api">Part.location</a> property from the <code>data.location</code> property</li>
+                <li>to the <a href="../api/symbols/Shape.html#fill" target="api">Shape.fill</a> property from the <code>data.color</code> property</li>
+                <li>to the <a href="../api/symbols/TextBlock.html#text" target="api">TextBlock.text</a> property from the <code>data.text</code> property</li>
+            </ul>
+            <p>
+            The use of templates and data binding greatly simplify the information that must be stored in model data,
+            and allow great flexibility in representing nodes and links in various manners independent of the model data.
+            But not all data properties need to be used in Bindings in the template.
+            </p>
+            <p>
+            Note that <a href="../api/symbols/Binding.html" target="api">Binding</a>s are <em>not</em> references from the data to any <a href="../api/symbols/Part.html" target="api">Part</a>.
+            The whole point of separating models from diagrams is to avoid references from data to Diagrams or Nodes or Links or Tools.
+            The only references from diagram to model are the <a href="../api/symbols/Diagram.html#model" target="api">Diagram.model</a> property and each node or link's <a href="../api/symbols/Panel.html#data" target="api">Panel.data</a> property.
+            </p>
+            
+            <h2 id="BindingStringAndNumberProperties">Binding string and number properties</h2>
+            <p>
+            It is easy to data bind <a href="../api/symbols/GraphObject.html" target="api">GraphObject</a> properties to data properties.
+            In this example we not only data bind <a href="../api/symbols/TextBlock.html#text" target="api">TextBlock.text</a> and <a href="../api/symbols/Shape.html#fill" target="api">Shape.fill</a> in nodes to property values of node data,
+            but for thicker colored lines we also bind <a href="../api/symbols/Shape.html#stroke" target="api">Shape.stroke</a> and <a href="../api/symbols/Shape.html#strokeWidth" target="api">Shape.strokeWidth</a> in links to property values of link data.
+            </p>
+            <p>
+            All you need to do is add to the target <a href="../api/symbols/GraphObject.html" target="api">GraphObject</a> a new <a href="../api/symbols/Binding.html" target="api">Binding</a> that
+            names the target property on the visual object and the source property on the data object.
+            Of course the target property must be a settable property; some GraphObject properties are not settable.
+            If you specify a target property name that does not exist you will get warning messages in the console.
+            If the source property value is undefined, the binding is not evaluated.
+            </p>
+            <pre data-language="javascript" id="simpleModelWithBind" class=" hljs javascript">  diagram.nodeTemplate =
+                $(go.Node, <span class="hljs-string">"Auto"</span>,
+                $(go.Shape, <span class="hljs-string">"RoundedRectangle"</span>,
+                { fill: <span class="hljs-string">"white"</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"fill"</span>, <span class="hljs-string">"color"</span>)),  <span class="hljs-comment">// shape.fill = data.color</span>
+                $(go.TextBlock,
+                { margin: <span class="hljs-number">5</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"text"</span>, <span class="hljs-string">"key"</span>))  <span class="hljs-comment">// textblock.text = data.key</span>
+                );
+                
+                diagram.linkTemplate =
+                $(go.Link,
+                $(go.Shape,
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"stroke"</span>, <span class="hljs-string">"color"</span>),  <span class="hljs-comment">// shape.stroke = data.color</span>
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"strokeWidth"</span>, <span class="hljs-string">"thick"</span>)),  <span class="hljs-comment">// shape.strokeWidth = data.thick</span>
+                $(go.Shape,
+                { toArrow: <span class="hljs-string">"OpenTriangle"</span>, fill: <span class="hljs-literal">null</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"stroke"</span>, <span class="hljs-string">"color"</span>),  <span class="hljs-comment">// shape.stroke = data.color</span>
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"strokeWidth"</span>, <span class="hljs-string">"thick"</span>))  <span class="hljs-comment">// shape.strokeWidth = data.thick</span>
+                );
+                
+                <span class="hljs-keyword">var</span> nodeDataArray = [
+                { key: <span class="hljs-string">"Alpha"</span>, color: <span class="hljs-string">"lightblue"</span> },
+                { key: <span class="hljs-string">"Beta"</span>, color: <span class="hljs-string">"pink"</span> }
+                ];
+                <span class="hljs-keyword">var</span> linkDataArray = [
+                { from: <span class="hljs-string">"Alpha"</span>, to: <span class="hljs-string">"Beta"</span>, color: <span class="hljs-string">"blue"</span>, thick: <span class="hljs-number">2</span> }
+                ];
+                diagram.model = <span class="hljs-keyword">new</span> go.GraphLinksModel(nodeDataArray, linkDataArray);
+            </pre>
+            <script>goCode("simpleModelWithBind", 250, 150)</script><div class="diagramStyling" style="width: 250px; height: 150px; position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); cursor: auto;"><canvas tabindex="0" width="500" height="300" style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; width: 250px; height: 150px; cursor: auto;">This text is displayed if your browser does not support the Canvas HTML element.</canvas><div style="position: absolute; overflow: auto; width: 250px; height: 150px; z-index: 1;"><div style="position: absolute; width: 1px; height: 1px;"></div></div></div>
+            <p>
+            Note that there are two bindings using the "color" property of the source link data.
+            There is one for each target <a href="../api/symbols/Shape.html" target="api">Shape</a> in the <a href="../api/symbols/Link.html" target="api">Link</a> template;
+            each binds the <a href="../api/symbols/Shape.html#stroke" target="api">Shape.stroke</a> property.
+            </p>
+            <p>
+            Remember that there is no <code>Node.key</code> property.
+            However the key for a Node is accessible via <code>someNode.data.key</code>.
+            </p>
+            
+            <h2 id="BindingObjectPropertiesSuchAsLocation">Binding object properties such as <b>Part.location</b></h2>
+            <p>
+            You can also data bind properties that have values that are objects.
+            For example it is common to data bind the <a href="../api/symbols/Part.html#location" target="api">Part.location</a> property.
+            </p>
+            <p>
+            The value of Part.location is a <a href="../api/symbols/Point.html" target="api">Point</a>, so in this example the data property must be a Point.
+            </p>
+            <pre data-language="javascript" id="bindLocationPoint" class=" hljs javascript">  diagram.nodeTemplate =
+                $(go.Node, <span class="hljs-string">"Auto"</span>,
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"location"</span>, <span class="hljs-string">"loc"</span>),  <span class="hljs-comment">// get the Node.location from the data.loc value</span>
+                $(go.Shape, <span class="hljs-string">"RoundedRectangle"</span>,
+                { fill: <span class="hljs-string">"white"</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"fill"</span>, <span class="hljs-string">"color"</span>)),
+                $(go.TextBlock,
+                { margin: <span class="hljs-number">5</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"text"</span>, <span class="hljs-string">"key"</span>))
+                );
+                
+                <span class="hljs-keyword">var</span> nodeDataArray = [
+                <span class="hljs-comment">// for each node specify the location using Point values</span>
+                { key: <span class="hljs-string">"Alpha"</span>, color: <span class="hljs-string">"lightblue"</span>, loc: <span class="hljs-keyword">new</span> go.Point(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>) },
+                { key: <span class="hljs-string">"Beta"</span>, color: <span class="hljs-string">"pink"</span>, loc: <span class="hljs-keyword">new</span> go.Point(<span class="hljs-number">100</span>, <span class="hljs-number">50</span>) }
+                ];
+                <span class="hljs-keyword">var</span> linkDataArray = [
+                { from: <span class="hljs-string">"Alpha"</span>, to: <span class="hljs-string">"Beta"</span> }
+                ];
+                diagram.model = <span class="hljs-keyword">new</span> go.GraphLinksModel(nodeDataArray, linkDataArray);
+            </pre>
+            <script>goCode("bindLocationPoint", 250, 150)</script><div class="diagramStyling" style="width: 250px; height: 150px; position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); cursor: auto;"><canvas tabindex="0" width="500" height="300" style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; width: 250px; height: 150px; cursor: auto;">This text is displayed if your browser does not support the Canvas HTML element.</canvas><div style="position: absolute; overflow: auto; width: 250px; height: 150px; z-index: 1;"><div style="position: absolute; width: 1px; height: 1px;"></div></div></div>
+            <p>
+            For conciseness the rest of these examples make use of the default <a href="../api/symbols/Diagram.html#linkTemplate" target="api">Diagram.linkTemplate</a>.
+            </p>
+            
+            <h2 id="ConversionFunctions">Conversion functions</h2>
+            <p>
+            But what if you want the data property value for the location to be something other than a <a href="../api/symbols/Point.html" target="api">Point</a>?
+            You can provide a conversion function that converts the actual data property value to the needed value type or format.
+            </p>
+            <p>
+            For situations like this example, the <a href="../api/symbols/Point.html" target="api">Point</a> class includes a static function,
+            <a href="../api/symbols/Point.html#parse" target="api">Point.parse</a>, that you can use to convert a string into a Point object.
+            It expects two numbers to be in the input string, representing the <a href="../api/symbols/Point.html#x" target="api">Point.x</a> and <a href="../api/symbols/Point.html#y" target="api">Point.y</a> values.
+            It returns a Point object with those values.
+            </p>
+            <p>
+            You can pass a conversion function as the third argument to the <a href="../api/symbols/Binding.html" target="api">Binding</a> constructor.
+            In this case it is <a href="../api/symbols/Point.html#parse" target="api">Point.parse</a>.
+            This allows the location to be specified in the form of a string ("100 50") rather than as an expression that returns a <a href="../api/symbols/Point.html" target="api">Point</a>.
+            For data properties on model objects, you will often want to use strings as the representation of
+            <a href="../api/symbols/Point.html" target="api">Point</a>s, <a href="../api/symbols/Size.html" target="api">Size</a>s, <a href="../api/symbols/Rect.html" target="api">Rect</a>s, <a href="../api/symbols/Margin.html" target="api">Margin</a>s, and <a href="../api/symbols/Spot.html" target="api">Spot</a>s, rather than references to objects of those classes.
+            Strings are easily read and written in JSON and XML.
+            Trying to read/write classes of objects would take extra space and would require additional cooperation on the part of both the writer and the reader.
+            </p>
+            <pre data-language="javascript" id="bindLocationString" class=" hljs javascript">  diagram.nodeTemplate =
+                $(go.Node, <span class="hljs-string">"Auto"</span>,
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"location"</span>, <span class="hljs-string">"loc"</span>, go.Point.parse),  <span class="hljs-comment">// convert string into a Point value</span>
+                $(go.Shape, <span class="hljs-string">"RoundedRectangle"</span>,
+                { fill: <span class="hljs-string">"white"</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"fill"</span>, <span class="hljs-string">"color"</span>)),
+                $(go.TextBlock,
+                { margin: <span class="hljs-number">5</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"text"</span>, <span class="hljs-string">"key"</span>))
+                );
+                
+                <span class="hljs-keyword">var</span> nodeDataArray = [
+                { key: <span class="hljs-string">"Alpha"</span>, color: <span class="hljs-string">"lightblue"</span>, loc: <span class="hljs-string">"0 0"</span> },  <span class="hljs-comment">// note string values for location</span>
+                { key: <span class="hljs-string">"Beta"</span>, color: <span class="hljs-string">"pink"</span>, loc: <span class="hljs-string">"100 50"</span> }
+                ];
+                <span class="hljs-keyword">var</span> linkDataArray = [
+                { from: <span class="hljs-string">"Alpha"</span>, to: <span class="hljs-string">"Beta"</span> }
+                ];
+                diagram.model = <span class="hljs-keyword">new</span> go.GraphLinksModel(nodeDataArray, linkDataArray);
+            </pre>
+            <script>goCode("bindLocationString", 250, 150)</script><div class="diagramStyling" style="width: 250px; height: 150px; position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); cursor: auto;"><canvas tabindex="0" width="500" height="300" style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; width: 250px; height: 150px; cursor: auto;">This text is displayed if your browser does not support the Canvas HTML element.</canvas><div style="position: absolute; overflow: auto; width: 250px; height: 150px; z-index: 1;"><div style="position: absolute; width: 1px; height: 1px;"></div></div></div>
+            
+            <p>
+            Conversion functions can be named or anonymous functions.
+            They take a data property value and return a value suitable for the property that is being set.
+            They should not have any side-effects.
+            They may get called any number of times in any order.
+            </p>
+            <p>
+            Here is an example that has several <a href="../api/symbols/Shape.html" target="api">Shape</a> properties data-bound to the same boolean data property named "highlight".
+            Each conversion function takes the boolean value and returns the appropriate value for the property that is data-bound.
+            This makes it trivial to control the appearance of each node from the data by setting the "highlight" data property to be either false or true.
+            </p>
+            <pre data-language="javascript" id="bindHighlight" class=" hljs javascript">  diagram.nodeTemplate =
+                $(go.Node, <span class="hljs-string">"Auto"</span>,
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"location"</span>, <span class="hljs-string">"loc"</span>, go.Point.parse),
+                $(go.Shape, <span class="hljs-string">"RoundedRectangle"</span>,
+                { <span class="hljs-comment">// default values if the data.highlight is undefined:</span>
+                fill: <span class="hljs-string">"yellow"</span>, stroke: <span class="hljs-string">"orange"</span>, strokeWidth: <span class="hljs-number">2</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"fill"</span>, <span class="hljs-string">"highlight"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(v)</span> {</span> <span class="hljs-keyword">return</span> v ? <span class="hljs-string">"pink"</span> : <span class="hljs-string">"lightblue"</span>; }),
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"stroke"</span>, <span class="hljs-string">"highlight"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(v)</span> {</span> <span class="hljs-keyword">return</span> v ? <span class="hljs-string">"red"</span> : <span class="hljs-string">"blue"</span>; }),
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"strokeWidth"</span>, <span class="hljs-string">"highlight"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(v)</span> {</span> <span class="hljs-keyword">return</span> v ? <span class="hljs-number">3</span> : <span class="hljs-number">1</span>; })),
+                $(go.TextBlock,
+                { margin: <span class="hljs-number">5</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"text"</span>, <span class="hljs-string">"key"</span>))
+                );
+                
+                <span class="hljs-keyword">var</span> nodeDataArray = [
+                { key: <span class="hljs-string">"Alpha"</span>, loc: <span class="hljs-string">"0 0"</span>, highlight: <span class="hljs-literal">false</span> },
+                { key: <span class="hljs-string">"Beta"</span>, loc: <span class="hljs-string">"100 50"</span>, highlight: <span class="hljs-literal">true</span> },
+                { key: <span class="hljs-string">"Gamma"</span>, loc: <span class="hljs-string">"0 100"</span> }  <span class="hljs-comment">// highlight property undefined: use defaults</span>
+                ];
+                <span class="hljs-keyword">var</span> linkDataArray = [
+                { from: <span class="hljs-string">"Alpha"</span>, to: <span class="hljs-string">"Beta"</span> }
+                ];
+                diagram.model = <span class="hljs-keyword">new</span> go.GraphLinksModel(nodeDataArray, linkDataArray);
+            </pre>
+            <script>goCode("bindHighlight", 250, 150)</script><div class="diagramStyling" style="width: 250px; height: 150px; position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); cursor: auto;"><canvas tabindex="0" width="500" height="300" style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; width: 250px; height: 150px; cursor: auto;">This text is displayed if your browser does not support the Canvas HTML element.</canvas><div style="position: absolute; overflow: auto; width: 250px; height: 150px; z-index: 1;"><div style="position: absolute; width: 1px; height: 1px;"></div></div></div>
+            
+            <p class="box bg-danger">
+            Note that a conversion function can only return property values.
+            You cannot return GraphObjects to replace objects in the visual tree of the Part.
+            If you need to show different GraphObjects based on bound data,
+            you can bind the <a href="../api/symbols/GraphObject.html#visible" target="api">GraphObject.visible</a> or the <a href="../api/symbols/GraphObject.html#opacity" target="api">GraphObject.opacity</a> property.
+            If you really want different visual structures
+            you can use multiple templates (<a href="templateMaps.html">Template Maps</a>).
+            </p>
+            
+            <h2 id="ChangingDataValues">Changing data values</h2>
+            <p>
+            The examples above all depend on the data bindings being evaluated when the <a href="../api/symbols/Part.html" target="api">Part</a>
+            has been created and its <a href="../api/symbols/Panel.html#data" target="api">Panel.data</a> property is set to refer to the corresponding
+            node or link data.
+            These actions occur automatically when the <a href="../api/symbols/Diagram.html" target="api">Diagram</a> creates diagram parts
+            for the data in the model upon setting <a href="../api/symbols/Diagram.html#model" target="api">Diagram.model</a>.
+            </p>
+            <p>
+            However, <b>GoJS</b> cannot know when the data property of an arbitrary JavaScript object has been modified.
+            If you want to change some data object in a model and have the diagram be automatically updated,
+            what you should do depends on the nature of the property that you are changing.
+            </p>
+            <p>
+            For most data properties, ones that the model does not treat specially but are data-bound,
+            you can just call <a href="../api/symbols/Model.html#setDataProperty" target="api">Model.setDataProperty</a>.
+            In this example we modify the value of "highlight" on a node data object.
+            For fun, this modification occurs about twice a second.
+            </p>
+            <pre data-language="javascript" id="changeBoundValue" class=" hljs javascript">  diagram.nodeTemplate =
+                $(go.Node, <span class="hljs-string">"Auto"</span>,
+                { locationSpot: go.Spot.Center },
+                $(go.Shape, <span class="hljs-string">"RoundedRectangle"</span>,
+                { <span class="hljs-comment">// default values if the data.highlight is undefined:</span>
+                fill: <span class="hljs-string">"yellow"</span>, stroke: <span class="hljs-string">"orange"</span>, strokeWidth: <span class="hljs-number">2</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"fill"</span>, <span class="hljs-string">"highlight"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(v)</span> {</span> <span class="hljs-keyword">return</span> v ? <span class="hljs-string">"pink"</span> : <span class="hljs-string">"lightblue"</span>; }),
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"stroke"</span>, <span class="hljs-string">"highlight"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(v)</span> {</span> <span class="hljs-keyword">return</span> v ? <span class="hljs-string">"red"</span> : <span class="hljs-string">"blue"</span>; }),
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"strokeWidth"</span>, <span class="hljs-string">"highlight"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(v)</span> {</span> <span class="hljs-keyword">return</span> v ? <span class="hljs-number">3</span> : <span class="hljs-number">1</span>; })),
+                $(go.TextBlock,
+                { margin: <span class="hljs-number">5</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"text"</span>, <span class="hljs-string">"key"</span>))
+                );
+                
+                diagram.model.nodeDataArray = [
+                { key: <span class="hljs-string">"Alpha"</span>, highlight: <span class="hljs-literal">false</span> }  <span class="hljs-comment">// just one node, and no links</span>
+                ];
+                
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">flash</span><span class="hljs-params">()</span> {</span>
+                <span class="hljs-keyword">var</span> model = diagram.model;
+                <span class="hljs-comment">// all model changes should happen in a transaction</span>
+                model.startTransaction(<span class="hljs-string">"flash"</span>);
+                <span class="hljs-keyword">var</span> data = model.nodeDataArray[<span class="hljs-number">0</span>];  <span class="hljs-comment">// get the first node data</span>
+                model.setDataProperty(data, <span class="hljs-string">"highlight"</span>, !data.highlight);
+                model.commitTransaction(<span class="hljs-string">"flash"</span>);
+                }
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> {</span>
+                setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span> flash(); loop(); }, <span class="hljs-number">500</span>);
+                }
+                loop();
+            </pre>
+            <script>goCode("changeBoundValue", 250, 150)</script><div class="diagramStyling" style="width: 250px; height: 150px; position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); cursor: auto;"><canvas tabindex="0" width="250" height="150" style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; width: 250px; height: 150px; cursor: auto;">This text is displayed if your browser does not support the Canvas HTML element.</canvas><div style="position: absolute; overflow: auto; width: 250px; height: 150px; z-index: 1;"><div style="position: absolute; width: 1px; height: 1px;"></div></div></div>
+            
+            <h2 id="ChangingGraphStructure">Changing graph structure</h2>
+            <p>
+            For data properties that the model knows about, such as "to" or "from" for link data,
+            you must call the appropriate model methods in order to modify the data property.
+            Modifying a data property directly without calling the appropriate model method
+            may cause inconsistencies or undefined behavior.
+            </p>
+            <p>
+            For node data, the model methods are
+            <a href="../api/symbols/Model.html#setCategoryForNodeData" target="api">Model.setCategoryForNodeData</a>,
+            <a href="../api/symbols/Model.html#setKeyForNodeData" target="api">Model.setKeyForNodeData</a>,
+            <a href="../api/symbols/GraphLinksModel.html#setGroupKeyForNodeData" target="api">GraphLinksModel.setGroupKeyForNodeData</a>,
+            <a href="../api/symbols/TreeModel.html#setParentKeyForNodeData" target="api">TreeModel.setParentKeyForNodeData</a>, and
+            <a href="../api/symbols/TreeModel.html#setParentLinkCategoryForNodeData" target="api">TreeModel.setParentLinkCategoryForNodeData</a>.
+            For link data, the model methods are
+            <a href="../api/symbols/GraphLinksModel.html#setCategoryForLinkData" target="api">GraphLinksModel.setCategoryForLinkData</a>,
+            <a href="../api/symbols/GraphLinksModel.html#setFromKeyForLinkData" target="api">GraphLinksModel.setFromKeyForLinkData</a>,
+            <a href="../api/symbols/GraphLinksModel.html#setFromPortIdForLinkData" target="api">GraphLinksModel.setFromPortIdForLinkData</a>,
+            <a href="../api/symbols/GraphLinksModel.html#setToKeyForLinkData" target="api">GraphLinksModel.setToKeyForLinkData</a>,
+            <a href="../api/symbols/GraphLinksModel.html#setToPortIdForLinkData" target="api">GraphLinksModel.setToPortIdForLinkData</a>, and
+            <a href="../api/symbols/GraphLinksModel.html#setLabelKeysForLinkData" target="api">GraphLinksModel.setLabelKeysForLinkData</a>.
+            </p>
+            <p>
+            This example changes the "to" property of a link data, causing the link to
+            connect to a different node.
+            </p>
+            <pre data-language="javascript" id="changeLinkTo" class=" hljs javascript">  diagram.nodeTemplate =
+                $(go.Node, <span class="hljs-string">"Auto"</span>,
+                { locationSpot: go.Spot.Center },
+                $(go.Shape, <span class="hljs-string">"RoundedRectangle"</span>,
+                { fill: <span class="hljs-string">"yellow"</span>, stroke: <span class="hljs-string">"orange"</span>, strokeWidth: <span class="hljs-number">2</span> }),
+                $(go.TextBlock,
+                { margin: <span class="hljs-number">5</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"text"</span>, <span class="hljs-string">"key"</span>))
+                );
+                
+                <span class="hljs-keyword">var</span> nodeDataArray = [
+                { key: <span class="hljs-string">"Alpha"</span> },
+                { key: <span class="hljs-string">"Beta"</span> },
+                { key: <span class="hljs-string">"Gamma"</span> }
+                ];
+                <span class="hljs-keyword">var</span> linkDataArray = [
+                { from: <span class="hljs-string">"Alpha"</span>, to: <span class="hljs-string">"Beta"</span> }
+                ];
+                diagram.model = <span class="hljs-keyword">new</span> go.GraphLinksModel(nodeDataArray, linkDataArray);
+                
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">switchTo</span><span class="hljs-params">()</span> {</span>
+                <span class="hljs-keyword">var</span> model = diagram.model;
+                <span class="hljs-comment">// all model changes should happen in a transaction</span>
+                model.startTransaction(<span class="hljs-string">"reconnect link"</span>);
+                <span class="hljs-keyword">var</span> data = model.linkDataArray[<span class="hljs-number">0</span>];  <span class="hljs-comment">// get the first link data</span>
+                <span class="hljs-keyword">if</span> (model.getToKeyForLinkData(data) === <span class="hljs-string">"Beta"</span>)
+                model.setToKeyForLinkData(data, <span class="hljs-string">"Gamma"</span>);
+                <span class="hljs-keyword">else</span>
+                model.setToKeyForLinkData(data, <span class="hljs-string">"Beta"</span>);
+                model.commitTransaction(<span class="hljs-string">"reconnect link"</span>);
+                }
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> {</span>
+                setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span> switchTo(); loop(); }, <span class="hljs-number">1000</span>);
+                }
+                loop();
+            </pre>
+            <script>goCode("changeLinkTo", 250, 150)</script><div class="diagramStyling" style="width: 250px; height: 150px; position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); cursor: auto;"><canvas tabindex="0" width="500" height="300" style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; width: 250px; height: 150px; cursor: auto;">This text is displayed if your browser does not support the Canvas HTML element.</canvas><div style="position: absolute; overflow: auto; width: 250px; height: 150px; z-index: 1;"><div style="position: absolute; width: 1px; height: 1px;"></div></div></div>
+            
+            <h2 id="BindingToGraphObjectSources">Binding to <b>GraphObject</b> sources</h2>
+            <p>
+            The binding source object need not be a plain JavaScript data object held in the diagram's model.
+            The source object may instead be a named <a href="../api/symbols/GraphObject.html" target="api">GraphObject</a> in the same <a href="../api/symbols/Part.html" target="api">Part</a>.
+            The source property must be a settable property of the class.
+            The binding is evaluated when the property is set to a new value.
+            </p>
+            <p>
+            One common use of such a binding is to change the appearance of a Part when the <a href="../api/symbols/Part.html#isSelected" target="api">Part.isSelected</a>.
+            Call <a href="../api/symbols/Binding.html#ofObject" target="api">Binding.ofObject</a> to cause the Binding to use the object whose <a href="../api/symbols/GraphObject.html#name" target="api">GraphObject.name</a> is the given name.
+            Use the empty string, "", or no argument, to refer to the whole Part itself.
+            This is a convenience so that you do not need to name the whole Part.
+            "ofObject" really means "of the GraphObject named ...", as found by <a href="../api/symbols/Panel.html#findObject" target="api">Panel.findObject</a> when there is a string argument.
+            </p>
+            <p>
+            In the example below, the <a href="../api/symbols/Shape.html#fill" target="api">Shape.fill</a> is bound to the <a href="../api/symbols/Part.html#isSelected" target="api">Part.isSelected</a> property.
+            When the node is selected or de-selected, the <a href="../api/symbols/Part.html#isSelected" target="api">Part.isSelected</a> property changes value, so the binding is evaluated.
+            The conversion function gets a boolean value and returns the desired brush color to be used as the shape's fill.
+            This example also turns off selection adornments, so that the only visual way to tell that a node is selected is by the shape's fill color.
+            </p>
+            <pre data-language="javascript" id="bindingElements" class=" hljs javascript">  diagram.nodeTemplate =
+                $(go.Node, <span class="hljs-string">"Auto"</span>,
+                { selectionAdorned: <span class="hljs-literal">false</span> },  <span class="hljs-comment">// no blue selection handle!</span>
+                $(go.Shape, <span class="hljs-string">"RoundedRectangle"</span>,
+                { fill: <span class="hljs-string">"white"</span> },
+                <span class="hljs-comment">// bind Shape.fill to Part.isSelected converted to a color</span>
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"fill"</span>, <span class="hljs-string">"isSelected"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(sel)</span> {</span>
+                <span class="hljs-keyword">return</span> sel ? <span class="hljs-string">"dodgerblue"</span> : <span class="hljs-string">"lightgray"</span>;
+                }).ofObject()),  <span class="hljs-comment">// no name means bind to the whole Part</span>
+                $(go.TextBlock,
+                { margin: <span class="hljs-number">5</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"text"</span>, <span class="hljs-string">"descr"</span>))
+                );
+                
+                diagram.model.nodeDataArray = [
+                { descr: <span class="hljs-string">"Select me!"</span> },
+                { descr: <span class="hljs-string">"I turn blue when selected."</span> }
+                ];
+            </pre>
+            <script>goCode("bindingElements", 450, 100)</script><div class="diagramStyling" style="width: 450px; height: 100px; position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255, 0);"><canvas tabindex="0" width="900" height="200" style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; width: 450px; height: 100px;">This text is displayed if your browser does not support the Canvas HTML element.</canvas><div style="position: absolute; overflow: auto; width: 450px; height: 100px; z-index: 1;"><div style="position: absolute; width: 1px; height: 1px;"></div></div></div>
+            
+            <p>
+            Caution: do not declare cycles of binding dependencies -- that will result in undefined behavior.
+            <a href="../api/symbols/GraphObject.html" target="api">GraphObject</a> binding sources also require the <a href="../api/symbols/Part.html" target="api">Part</a> to be bound to data (i.e. <a href="../api/symbols/Part.html#data" target="api">Part.data</a> must be non-null).
+            The property on the GraphObject must be settable, so it does not work on read-only properties
+            such as ones that return computed values (e.g. <a href="../api/symbols/Part.html#isTopLevel" target="api">Part.isTopLevel</a>) or Iterators (e.g. <a href="../api/symbols/Node.html#linksConnected" target="api">Node.linksConnected</a>).
+            </p>
+            
+            <h2 id="BindingToSharedModelDataSource">Binding to the shared <b>Model.modelData</b> source</h2>
+            <p>
+            The binding source object may be a third kind of source, besides the <a href="../api/symbols/Panel.html#data" target="api">Panel.data</a> or some <a href="../api/symbols/GraphObject.html" target="api">GraphObject</a> within the panel.
+            It can also be the JavaScript Object that is the shared <a href="../api/symbols/Model.html#modelData" target="api">Model.modelData</a> object.
+            This permits binding of Node or Link element properties to shared properties in the model
+            that will exist and may be modified even though no nodes or links exist in the model.
+            </p>
+            <p>
+            In the example below, the <a href="../api/symbols/Shape.html#fill" target="api">Shape.fill</a> is bound to the "color" property on the <a href="../api/symbols/Model.html#modelData" target="api">Model.modelData</a> object.
+            As you click the button the <code>changeColor</code> function modifies the <code>modelData</code> object
+            by calling <a href="../api/symbols/Model.html#setDataProperty" target="api">Model.setDataProperty</a>.
+            </p>
+            <pre data-language="javascript" id="bindingModel" class=" hljs javascript">diagram.nodeTemplate =
+                $(go.Node, <span class="hljs-string">"Auto"</span>,
+                $(go.Shape, <span class="hljs-string">"RoundedRectangle"</span>,
+                { fill: <span class="hljs-string">"white"</span> },  <span class="hljs-comment">// the default value if there is no modelData.color property</span>
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"fill"</span>, <span class="hljs-string">"color"</span>).ofModel()),  <span class="hljs-comment">// meaning a property of Model.modelData</span>
+                $(go.TextBlock,
+                { margin: <span class="hljs-number">5</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"text"</span>))
+                );
+                
+                <span class="hljs-comment">// start all nodes yellow</span>
+                diagram.model.modelData.color = <span class="hljs-string">"yellow"</span>;
+                
+                diagram.model.nodeDataArray = [
+                { text: <span class="hljs-string">"Alpha"</span> },
+                { text: <span class="hljs-string">"Beta"</span> }
+                ];
+                
+                diagram.undoManager.isEnabled = <span class="hljs-literal">true</span>;
+                
+                changeColor = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+                <span class="hljs-keyword">var</span> model = diagram.model;
+                diagram.startTransaction();
+                <span class="hljs-comment">// alternate between lightblue and lightgreen colors</span>
+                <span class="hljs-keyword">var</span> oldcolor = model.modelData.color;
+                <span class="hljs-keyword">var</span> newcolor = (oldcolor === <span class="hljs-string">"lightblue"</span> ? <span class="hljs-string">"lightgreen"</span> : <span class="hljs-string">"lightblue"</span>);
+                model.setDataProperty(model.modelData, <span class="hljs-string">"color"</span>, newcolor);
+                diagram.commitTransaction(<span class="hljs-string">"changed shared color"</span>);
+                }
+            </pre>
+            <script>goCode("bindingModel", 450, 100)</script><div class="diagramStyling" style="width: 450px; height: 100px; position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); cursor: auto;"><canvas tabindex="0" width="900" height="200" style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; width: 450px; height: 100px; cursor: auto;">This text is displayed if your browser does not support the Canvas HTML element.</canvas><div style="position: absolute; overflow: auto; width: 450px; height: 100px; z-index: 1;"><div style="position: absolute; width: 1px; height: 1px;"></div></div></div>
+            <button id="changeColorButton" onclick="changeColor()">Change shared color</button>
+            
+            <h2 id="TwoWayDataBinding">Two-way data binding</h2>
+            <p>
+            All of the bindings above only transfer values from the source data to target properties.
+            But sometimes you would like to be able to transfer values from <a href="../api/symbols/GraphObject.html" target="api">GraphObject</a>s back to the model data,
+            to keep the model data up-to-date with the diagram.
+            This is possible by using a TwoWay <a href="../api/symbols/Binding.html" target="api">Binding</a>, which can pass values not only from source to target,
+            but also from the target object back to the source data.
+            </p>
+            <pre data-language="javascript" id="bindTwoWay" class=" hljs javascript">  diagram.nodeTemplate =
+                $(go.Node, <span class="hljs-string">"Auto"</span>,
+                { locationSpot: go.Spot.Center },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"location"</span>, <span class="hljs-string">"loc"</span>).makeTwoWay(),  <span class="hljs-comment">// TwoWay Binding</span>
+                $(go.Shape, <span class="hljs-string">"RoundedRectangle"</span>,
+                { fill: <span class="hljs-string">"lightblue"</span>, stroke: <span class="hljs-string">"blue"</span>, strokeWidth: <span class="hljs-number">2</span> }),
+                $(go.TextBlock,
+                { margin: <span class="hljs-number">5</span> },
+                <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"text"</span>, <span class="hljs-string">"key"</span>))
+                );
+                
+                <span class="hljs-keyword">var</span> nodeDataArray = [
+                { key: <span class="hljs-string">"Alpha"</span>, loc: <span class="hljs-keyword">new</span> go.Point(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>) }
+                ];
+                diagram.model = <span class="hljs-keyword">new</span> go.GraphLinksModel(nodeDataArray);
+                
+                shiftNode = (<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>  <span class="hljs-comment">// define a function named "shiftNode" callable by onclick</span>
+                <span class="hljs-comment">// all model changes should happen in a transaction</span>
+                diagram.startTransaction(<span class="hljs-string">"shift node"</span>);
+                <span class="hljs-keyword">var</span> data = diagram.model.nodeDataArray[<span class="hljs-number">0</span>];  <span class="hljs-comment">// get the first node data</span>
+                <span class="hljs-keyword">var</span> node = diagram.findNodeForData(data);   <span class="hljs-comment">// find the corresponding Node</span>
+                <span class="hljs-keyword">var</span> p = node.location.copy();  <span class="hljs-comment">// make a copy of the location, a Point</span>
+                p.x += <span class="hljs-number">10</span>;
+                <span class="hljs-keyword">if</span> (p.x &gt; <span class="hljs-number">200</span>) p.x = <span class="hljs-number">0</span>;
+                <span class="hljs-comment">// changing the Node.location also changes the data.loc property due to TwoWay binding</span>
+                node.location = p;
+                <span class="hljs-comment">// show the updated location held by the "loc" property of the node data</span>
+                document.getElementById(<span class="hljs-string">"bindTwoWayData"</span>).textContent = data.loc.toString();
+                diagram.commitTransaction(<span class="hljs-string">"shift node"</span>);
+                });
+                shiftNode();  <span class="hljs-comment">// initialize everything</span>
+            </pre>
+            <p>
+            Click on the button to move the <a href="../api/symbols/Node.html" target="api">Node</a>.
+            The effect is basically what happens when the user drags the node.
+            In this example, the TwoWay <a href="../api/symbols/Binding.html" target="api">Binding</a> on <a href="../api/symbols/Node.html#location" target="api">Node.location</a> will update the
+            "loc" property of the node data that is the Node's <a href="../api/symbols/Part.html#data" target="api">Part.data</a>.
+            </p>
+            <input type="button" onclick="shiftNode()" value="shiftNode()">
+                nodedata.loc: <code id="bindTwoWayData">Point(43,42)</code>
+                <script>goCode("bindTwoWay", 250, 150)</script><div class="diagramStyling" style="width: 250px; height: 150px; position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); cursor: auto;"><canvas tabindex="0" width="500" height="300" style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; width: 250px; height: 150px; cursor: auto;">This text is displayed if your browser does not support the Canvas HTML element.</canvas><div style="position: absolute; overflow: auto; width: 250px; height: 150px; z-index: 1;"><div style="position: absolute; width: 1px; height: 1px;"></div></div></div>
+                <p>
+                Just as you can use a conversion function when going from source to target,
+                you can supply a conversion function to <a href="../api/symbols/Binding.html#makeTwoWay" target="api">Binding.makeTwoWay</a> for going from target to source.
+                For example, to represent the location as a string in the model data instead of as a <a href="../api/symbols/Point.html" target="api">Point</a>:
+                </p>
+                <pre class=" hljs javascript"><span class="hljs-comment">// storage representation of Points/Sizes/Rects/Margins/Spots is as strings, not objects:</span>
+                    <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"location"</span>, <span class="hljs-string">"loc"</span>, go.Point.parse).makeTwoWay(go.Point.stringify)
+                </pre>
+                <p>
+                However, you must not have a TwoWay binding on the node data property that is the "key" property.
+                (That defaults to the name "key" but is actually the value of <a href="../api/symbols/Model.html#nodeKeyProperty" target="api">Model.nodeKeyProperty</a>.)
+                That property value must always be unique among all node data within the model and is known by the Model.
+                A TwoWay binding might change the value, causing a multitude of problems.
+                </p>
+                
+                <h2 id="ReasonsForTwoWayBindings">Reasons for TwoWay Bindings</h2>
+                <p>
+                The basic reason for using a TwoWay <a href="../api/symbols/Binding.html" target="api">Binding</a> on a settable property is to make sure that any changes to that property
+                will be copied to the corresponding model data.
+                By making sure that the <a href="../api/symbols/Model.html" target="api">Model</a> is up-to-date, you can easily "save the diagram" just by saving the model
+                and "loading a diagram" is just a matter of loading a model into memory and setting <a href="../api/symbols/Diagram.html#model" target="api">Diagram.model</a>.
+                If you are careful to only hold JSON-serializable data in the model data, you can just use the <a href="../api/symbols/Model.html#toJson" target="api">Model.toJson</a>
+                and <a href="../api/symbols/Model.html#fromJson" target="api">Model.fromJson</a> methods for converting a model to and from a textual representation.
+                </p>
+                <p>
+                <em>Most bindings do not need to be TwoWay.</em>
+                For performance reasons you should not make a Binding be TwoWay unless you actually need to propagate changes back to the data.
+                Most settable properties are only set on initialization and then never change.
+                </p>
+                <p>
+                Settable properties only change value when some code sets them.
+                That code might be in code that you write as part of your app.
+                Or it might be in a command (see <a href="commands.html">Commands</a>) or a tool (see <a href="tools.html">Tools</a>).
+                Here is a list of properties for which a TwoWay Binding is plausible because one of the predefined commands or tools modify them:
+                </p>
+                <ul>
+                    <li><a href="../api/symbols/Part.html#location" target="api">Part.location</a>, by <a href="../api/symbols/DraggingTool.html" target="api">DraggingTool</a> if it is enabled</li>
+                    <li><a href="../api/symbols/Link.html#points" target="api">Link.points</a>, by <a href="../api/symbols/LinkReshapingTool.html" target="api">LinkReshapingTool</a> if it is enabled</li>
+                    <li><a href="../api/symbols/GraphObject.html#desiredSize" target="api">GraphObject.desiredSize</a>, by <a href="../api/symbols/ResizingTool.html" target="api">ResizingTool</a> if it is enabled</li>
+                    <li><a href="../api/symbols/GraphObject.html#angle" target="api">GraphObject.angle</a>, by <a href="../api/symbols/RotatingTool.html" target="api">RotatingTool</a> if it is enabled</li>
+                    <li><a href="../api/symbols/TextBlock.html#text" target="api">TextBlock.text</a>, by <a href="../api/symbols/TextEditingTool.html" target="api">TextEditingTool</a> if it is enabled</li>
+                    <li><a href="../api/symbols/Part.html#isSelected" target="api">Part.isSelected</a>, by many tools and commands</li>
+                    <li><a href="../api/symbols/Node.html#isTreeExpanded" target="api">Node.isTreeExpanded</a> and <a href="../api/symbols/Node.html#wasTreeExpanded" target="api">Node.wasTreeExpanded</a>, by <a href="../api/symbols/CommandHandler.html#collapseTree" target="api">CommandHandler.collapseTree</a> and <a href="../api/symbols/CommandHandler.html#expandTree" target="api">CommandHandler.expandTree</a>, called by a "TreeExpanderButton"</li>
+                    <li><a href="../api/symbols/Group.html#isSubGraphExpanded" target="api">Group.isSubGraphExpanded</a> and <a href="../api/symbols/Group.html#wasSubGraphExpanded" target="api">Group.wasSubGraphExpanded</a>, by <a href="../api/symbols/CommandHandler.html#collapseSubGraph" target="api">CommandHandler.collapseSubGraph</a> and <a href="../api/symbols/CommandHandler.html#expandSubGraph" target="api">CommandHandler.expandSubGraph</a>, called by a "SubGraphExpanderButton"</li>
+                </ul>
+                <p>
+                You will not need to use a TwoWay binding on a property if the Tool that modifies it cannot run,
+                or if the command that modifies it cannot be invoked.
+                You probably will not need a TwoWay binding on any other properties unless you write code to modify them.
+                And even then it is sometimes better to write the code to modify the model data directly by calling <a href="../api/symbols/Model.html#setDataProperty" target="api">Model.setDataProperty</a>,
+                depending on a OneWay Binding to update the GraphObject property.
+                </p>
+                <p>
+                It is also possible to use TwoWay Bindings where the source is a GraphObject rather than model data.
+                This is needed less frequently, when you do <em>not</em> want to have the state stored in the model,
+                but you do want to synchronize properties of GraphObjects within the same Part.
+                <em>Use TwoWay Bindings sparingly.</em>
+                </p>
+                
+                <div><div><a href="http://gojs.net/latest/intro/usingmodels.html">&lt;Previous Intro Page</a><a style="float:right" href="http://gojs.net/latest/intro/itemarrays.html">Next Intro Page&gt;</a></div></div><div class="footer">Copyright © 1998-2017 by Northwoods Software Corporation.GoJS® version 1.7.16. Copyright © 1998-2017 by Northwoods Software Corporation.</div></div>
+    </div><div style="top: 0px; z-index: 300; position: fixed; display: none; text-align: center; left: 25%; width: 50%; background-color: rgb(245, 245, 245); padding: 16px; border: 16px solid rgb(68, 68, 68); border-radius: 10px; margin-top: 10px;"></div><div style="z-index: 299; position: fixed; display: none; top: 0px; left: 0px; width: 100%; height: 100%; background-color: black; opacity: 0.8;"></div>
+    
+    
+</body></html>

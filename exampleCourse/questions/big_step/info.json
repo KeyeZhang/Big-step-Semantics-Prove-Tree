@@ -1,0 +1,13 @@
+{
+    "uuid": "233af09e-907f-4df8-b280-b33338dc63db",
+    "clientFiles": [
+                    "client.js",
+                    "question.html",
+                    "answer.html"
+                    ],
+    "tags": [
+    ],
+    "title": "Big Step Semantics: 01",
+    "topic": "Vectors",
+    "type": "Calculation"
+}

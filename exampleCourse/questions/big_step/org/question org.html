@@ -1,0 +1,142 @@
+<link type="text/css" rel="stylesheet" href="<% print(clientFile('css/style.css')) %>" />
+<style type="text/css">
+  #serializedTree {
+    width:100%;
+    display:none;
+  }
+</style>
+
+<!-- BEGIN Question Statement -->
+<!-- REFENRENCE ERROR IN THIS BLOCK -->
+<!--<script src="clientFilesCourse/prooftree-draw-helper.js"></script>  -->
+<script type="text/javascript">
+/* MODIFY BELOW THIS LINE */
+  window.setTimeout(function() {
+    window.proofTreeDraw = new ProofTreeDraw("bigStep");
+    window.baseStatementLeft = "(while x do x :=  y < 3 od; skip, {x |-> true, y |-> 5})";
+    window.baseStatementMiddle = "{x |-> false, y |-> 5}";
+    window.baseStatementRight = "";
+  }, 250);
+/* MODIFY ABOVE THIS LINE */
+</script>
+
+
+<h4>Instructions</h4>
+<div id="instructions">
+  <p>Complete the proof below. You may use the <a href="<% print(clientFile('html/big step semantics/inferenceRules.html')) %>">rules located here</a>.</p>
+  <p>
+    To use the tool below:
+    <ul>
+      <li><strong>[+]</strong> adds a subproof above the line to the selected
+        inference.</li>
+      <li><strong>[e]</strong> allows you to edit the selected
+        inference.</li>
+      <li><strong>[x]</strong> deletes the selected inference
+        <strong>and</strong> its subtrees.</li>
+      <li><strong>[sc]</strong> allows you to add a side condition to the
+        selected inference.</li>
+    </ul>
+  </p>
+  <br />
+</div>
+
+<!-- <img src="<% print(questionFile("fig1.png")) %>" width="500px" class="img-responsive center-block" />  -->
+
+<h4>Problem</h4>
+
+<p> problem: $\langle$ x + y + z, $\{$ x:=10, y:=20, z:=12$\}$$\rangle$
+<p> rule 1:  $\overline{\langle i,  \sigma\rangle\Downarrow_e}$ if i is an interger
+
+<input type="text" id="serializedTree" data-instavalue="submittedAnswer.serializedTree" />
+
+<!-- <div class="proofTreeView" style="display:none;"> -->
+<div class="proofTreeView">
+  <button id="proofTreeViewModalClose">Close Window</button>
+</div>
+
+<!--<div class="proofTreeForm" style="display:none;">-->
+<div class="proofTreeForm">
+  <div class="proofTreeNest l0">
+    <div class="proofTreeNest l1">
+      <div class="proofTreeLine" style="border:none;">
+        <input type="text" id="proofTreeModalAnsLeft" style="width:25%;">
+        <span class="operator"></span>
+        <input type="text" id="proofTreeModalAnsRight" style="width:25%;">
+        <span class="conditionText">, optionally where</span>
+        <input type="text" id="proofTreeModalAnsCondition" style="width:25%;">
+      </div>
+    </div>
+    <div class="proofTreeLabel" id="proofTreeModalLabel"></div>
+    <div class="proofTreeLine">
+      <span id="proofTreeModalLeft" class="tt">
+      </span>
+      <span class="operator"></span>
+      <span id="proofTreeModalRight" class="tt">
+      </span>
+      <span class="proofTreeLineConditionPhrase">
+      </span>
+      <span id="proofTreeModalCondition" class="tt">
+      </span>
+    </div>
+    <div id="proofTreeButtons">
+      <button type="button" id="proofTreeButtonSave" nextLevel="1" parentId="root-l0a" class="btn btn-primary">
+        Save Inference
+      </button>
+      <button type="button" id="proofTreeButtonEdit" nextLevel="1" parentId="root-l0a" currentId="root-l0a-l1a" class="btn btn-primary">
+        Save Edits to Inference
+      </button>
+      <button type="button" id="proofTreeButtonCancel" class="btn btn-danger">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
+
+<style type="text/css">
+</style>
+
+<div id="proofTreeContainer">
+  <div id="root-l0a" class="proofTreeNest l0">
+    <div class="proofTreeAddSubproof">
+      <a href="#" currLevel="0" class="addSubproof">[+]</a>
+      <span class="proofTreeSideConditionLink">
+        | <a href="#" class="addSideCondition">[sc]</a>
+      </span>
+    </div>
+    <div class="proofTreeActions">
+    </div>
+    <input type="text" class="proofTreeSideCondition"
+      placeholder="Side Condition" />
+    <div class="proofTreeLabel">
+      <select class="proofTreeDropdownLabel">
+        <option selected></option>
+      </select>
+    </div>
+    <div class="proofTreeLine">
+      <span id="baseStatementLeft" class="proofTreeLineLeft tt">
+      </span>
+      <span class="operator"></span>
+      <span id="baseStatementMiddle" class="proofTreeLineRight tt">
+      </span>
+      <span class="proofTreeLineConditionPhrase">
+      </span>
+      <span id="baseStatementRight" class="proofTreeLineCondition tt">
+      </span>
+    </div>
+  </div>
+</div>
+
+<div id="modalButtons" style="text-align:center;">
+  <button id="proofTreeViewModalOpen">View Larger Version</button>
+</div>
+
+<!-- REFENRENCE ERROR IN THIS BLOCK -->
+<script type="text/javascript">
+  window.setTimeout(function() {
+    proofTreeDraw.initialize();
+    proofTreeDraw.giveWidths($('#proofTreeContainer').children(), 'root', 0);
+    $('#baseStatementLeft').text(baseStatementLeft);
+    $('#baseStatementMiddle').text(baseStatementMiddle);
+    $('#baseStatementRight').text(baseStatementRight);
+  }, 1000);
+</script>

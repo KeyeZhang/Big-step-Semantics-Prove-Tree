@@ -1,0 +1,31 @@
+{
+    "uuid": "ba423ba8-0ee0-49d9-b057-7f8754888083",
+    "type": "Exam",
+    "title": "Exam for automatic test suiteeeeeereee",
+    "set": "Exam",
+    "number": "1",
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "role": "TA",
+            "credit": 100
+        },
+        {
+            "mode": "Exam",
+            "credit": 100,
+            "startDate": "1900-07-07T23:59:59",
+            "endDate": "2300-07-10T23:59:59",
+            "password": "secret"
+        }
+    ],
+    "zones": [
+        {
+            "title": "Hard questions",
+            "questions": [
+                {"id": "addVectors",       "points": [10, 3]},
+                {"id": "fossilFuelsRadio", "points": [10, 5, 1]}
+            ]
+        }
+    ],
+    "text": "For this exam you can use the <a target=\"_blank\" href=\"<%= clientFilesAssessment %>/formulas.pdf\">PDF formula sheet</a> or the <a target=\"_blank\" href=\"<%= clientFilesAssessment %>/formulas.html\">HTML formula sheet</a>."
+}

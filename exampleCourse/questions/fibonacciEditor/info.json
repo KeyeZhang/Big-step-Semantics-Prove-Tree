@@ -1,0 +1,16 @@
+{
+    "uuid": "08df0389-3c0f-4f7c-9658-3fd57472fff1",
+    "title": "Fibonacci function with in-browser editor, external grading",
+    "topic": "Functions",
+    "tags": ["code"],
+    "clientFiles": ["client.js", "question.html", "answer.html", "submission.html"],
+    "type": "Calculation",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/centos7-base",
+        "files": ["python_autograder/"],
+        "entrypoint": "/grade/shared/python_autograder/run.sh"
+    }
+}

@@ -1,0 +1,82 @@
+
+<script>
+  function save() {
+    var jsonDataStr = myDiagram.model.toJson();
+    var jsonDataObj = JSON.parse(jsonDataStr);
+    var jsonDataNodeArr = jsonDataObj.nodeDataArray;
+    //learn: JSON Object to String: JSON.parse(obj);
+    //       String to JSON Object: JSON.stringify(str);
+    
+    //Constuct our final answer JSON Objects by selecting necessary attributes: every node's key -> text(user inputs)
+    var answer = [];
+    for(var i = 0; i < jsonDataNodeArr.length; i++){
+      var obj = {"key":jsonDataNodeArr[i]["key"], "text": jsonDataNodeArr[i]["text"]};
+      answer.push(obj);
+    }
+
+    console.log(answer);
+    //print the final answer on the screen by converting it to string
+    //Learn: JSON string line breaking, replace "}," by "},\n", lose no chars and achieve line breaking 
+    document.getElementById("mySavedModel").value = JSON.stringify(answer).replace(/},/g, '},\n');
+    myDiagram.isModified = false;
+  }
+</script>
+
+<div id="sample">
+  <div id="myDiagramDiv" style="background-color: white; border: solid 1px black; width: 100%; height: 500px"></div>
+  <p>
+  This sample allows a user to make progressive decisions about personality types.
+  </p>
+  <p>
+  There are two kinds of nodes, so there are two node templates ("decision" and "personality")
+  that determine the appearance and behavior of each <a>Node</a>.
+  </p>
+  <p>
+  The "decision" template displays the abbreviated personality type and two choice buttons, all surrounded by a figure.
+  Clicking a button will either expand the choice or will collapse all nodes leading from that choice.
+  </p>
+  <p>
+  The "personality" template displays the personality descriptions, as the "leaf" nodes for the tree.
+  </p>
+
+
+  <button id="SaveButton" onclick="save()">Save</button>
+<!--   <button onclick="load()">Load</button> -->
+  Diagram Model saved in JSON format:
+  <br />
+  <textarea id="mySavedModel" style="width:100%;height:400px">
+[{"key":"Problem","text":"x + y + z || {x:= 1, y:=2, z:=3}"},
+{"key":"I","text":"<>||{}"},
+{"key":"E","text":"<>||{}"},
+{"key":"IN","text":"<>||{}"},
+{"key":"IS","text":"<>||{}"},
+{"key":"EN","text":"<>||{}"},
+{"key":"ES","text":"<>||{}"},
+{"key":"INT","text":"<>||{}"},
+{"key":"INF","text":"<>||{}"},
+{"key":"IST","text":"<>||{}"},
+{"key":"ISF","text":"<>||{}"},
+{"key":"ENT","text":"<>||{}"},
+{"key":"ENF","text":"<>||{}"},
+{"key":"EST","text":"<>||{}"},
+{"key":"ESF","text":"<>||{}"},
+{"key":"INTJ","text":""},
+{"key":"INTP","text":""},
+{"key":"INFJ","text":""},
+{"key":"INFP","text":""},
+{"key":"ISTJ","text":""},
+{"key":"ISTP","text":""},
+{"key":"ISFJ","text":""},
+{"key":"ISFP","text":""},
+{"key":"ENTJ","text":""},
+{"key":"ENTP","text":""},
+{"key":"ENFJ","text":""},
+{"key":"ENFP","text":""},
+{"key":"ESTJ","text":""},
+{"key":"ESTP","text":""},
+{"key":"ESFJ","text":""},
+{"key":"ESFP","text":""}]
+  </textarea>
+
+</div>
+

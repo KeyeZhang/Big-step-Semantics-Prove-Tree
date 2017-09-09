@@ -1,0 +1,20 @@
+{
+    "uuid": "29155300-346f-4a77-b187-1d04546cb0ce",
+    "type": "Homework",
+    "title": "Homework for automatic test suite",
+    "set": "Homework",
+    "number": "1",
+    "allowAccess": [
+        {
+            "credit": 100
+        }
+    ],
+    "zones": [
+        {
+            "questions": [
+                {"id": "addVectors",           "points": 1, "maxPoints": 5},
+                {"id": "fossilFuelsRadio",     "points": 2, "maxPoints": 10}
+            ]
+        }
+    ]
+}
